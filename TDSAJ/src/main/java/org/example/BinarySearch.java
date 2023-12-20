@@ -1,17 +1,28 @@
 package org.example;
 
-public class Main {
+public class BinarySearch {
+
     public static void main(String[] args) {
 
-        //Dstack nums = new DStack();
 
-        Queue q = new Queue();
-        q.enQueue(5);
-        q.enQueue(2);
+        System.out.println("Hello world!");
 
-        q.show();
+        int nums[] = {5,7,9,11,13};
+        int nums2[] = new int[1000];
+        int target = 11;
+        int result = linearSearch(nums, target);
+        int result2 = binarySearch(nums, target);
+        int left = 0;
+        int right = nums.length - 1;
+        int result3 = recursiveBinarySearch(nums, target, left, right);
+        if(result!=-1){
+            System.out.println("element found at index " + result);
+            System.out.println("element found at index " + result2);
+            System.out.println("element found at index " + result3);
 
-
+        }else {
+            System.out.println("element not found");
+        }
 
     }
     private static int recursiveBinarySearch(int[] nums, int target, int left, int right){
